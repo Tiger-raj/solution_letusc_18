@@ -163,20 +163,17 @@ int main(int argc, char const *argv[])
     scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &x3, &y3);
     m1 = (y2 - y1) / (x2 - x1);
     m2 = (y3 - y1) / (x3 - x1);
-    if (m1 == m2)
+    if ((x2 - x1) == 0 && (x3 - x1) == 0)
         printf("All points lie on one straight line.\n");
-    else
+    if (((x2 - x1) == 0 && (x3 - x1) != 0) || (x2 - x1) != 0 && (x3 - x1) == 0)
         printf("All points don't lie on one straight line.\n");
+    if ((x2 - x1) != 0 && (x3 - x1) != 0)
+    {
+        if (m1 == m2)
+            printf("All points lie on one straight line.\n");
+        else
+            printf("All points don't lie on one straight line.\n");
+    }
     return 0;
 }
 */
-#include <stdio.h>
-int main(int argc, char const *argv[])
-{
-    float a, b, c;
-    a = 1;
-    b = 0;
-    c = a / b;
-    printf("%d", c);
-    return 0;
-}
