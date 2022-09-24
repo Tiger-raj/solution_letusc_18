@@ -177,3 +177,76 @@ int main(int argc, char const *argv[])
     return 0;
 }
 */
+
+// Q7)Coordinate of center (x1,y1) and radius r of a circle is given, find out whether a point lies inside, outside or on the circle.
+/*
+#include <stdio.h>
+#include <math.h>
+
+int main(int argc, char const *argv[])
+{
+    float x1, y1, r, x, y, s1;
+    printf("Enter coordinates of center of circle (x1,y1).\n");
+    scanf("%f%f", &x1, &y1);
+    printf("Enter radius of circle.\n");
+    scanf("%f", &r);
+    printf("Enter coordinates of point to check it's position (x,y).\n");
+    scanf("%f%f", &x, &y);
+    s1 = pow((x - x1), 2) + pow((y - y1), 2) - r * r;
+    if (s1 > 0)
+        printf("Point lies outside the circle.\n");
+    if (s1 < 0)
+        printf("Point lies inside the circle.\n");
+    if (s1 == 0)
+        printf("Point lies on the circle.\n");
+    return 0;
+}
+*/
+
+// Q8)A point is given, check whether it lies on x-axis, y-axis or origin
+/*
+#include <stdio.h>
+int main(int argc, char const *argv[])
+{
+    float x, y;
+    printf("Enter cooridnates of point (x,y).\n");
+    scanf("%f%f", &x, &y);
+    if (x == 0)
+        printf("Point lies on y-axis.\n");
+    if (y == 0)
+        printf("Point lies on x-axis.\n");
+    if (y == 0 && x == 0)
+        printf("Point lies on origin.\n");
+    if (y != 0 && x != 0)
+        printf("Point does not lies on any axis or origin.\n");
+    return 0;
+}
+*/
+// Q9)It was Monday on 01/01/01 according to Gregorian Calendar. Find out day on 1st January of any year entered.
+/*
+#include <stdio.h>
+int main(int argc, char const *argv[])
+{
+    int year, noy, nod, rem;
+    printf("Enter any year b/w (2001, 2100).\n");
+    scanf("%d", &year);
+    noy = year - 2001;
+    nod = (noy / 4) * 366 + (noy - (noy / 4)) * 365;
+    rem = nod % 7;
+    if (rem == 0)
+        printf("1st January of this year is Monday.\n");
+    if (rem == 1)
+        printf("1st January of this year is Tuesday.\n");
+    if (rem == 2)
+        printf("1st January of this year is Wednesday.\n");
+    if (rem == 3)
+        printf("1st January of this year is Thursday.\n");
+    if (rem == 4)
+        printf("1st January of this year is Friday.\n");
+    if (rem == 5)
+        printf("1st January of this year is Saturday.\n");
+    if (rem == 6)
+        printf("1st January of this year is Sunday.\n");
+    return 0;
+}
+*/
