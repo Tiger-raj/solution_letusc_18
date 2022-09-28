@@ -38,7 +38,7 @@ Q3)Code a matchstick game b/w user and computer. Computer should always win. Rul
 - After user picks up, computer does its picking.
 - Whoever is forced to pick up the last matchstick loses the game.
 */
-
+/*
 #include <stdio.h>
 int main(int argc, char const *argv[])
 {
@@ -49,10 +49,13 @@ int main(int argc, char const *argv[])
     {
         printf("Choose 1,2,3 or 4 matchsticks.\n");
         scanf("%d", &user);
+        fflush(stdin);
         sum += user;
         if (21 - sum == 0)
         {
             printf("YOU LOST :(\n");
+            printf("Click (Enter) to continue.\n");
+            getchar();
         }
         else
         {
@@ -72,3 +75,83 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
+*/
+// Q4) Write a program to enter numbers till the user want. At the end it should display the count of positive, negative and zeros entered.
+/*
+#include <stdio.h>
+int main(int argc, char const *argv[])
+{
+    int pos = 0, neg = 0, zero = 0, temp, cond = 1;
+    while (cond)
+    {
+        printf("Enter any number :\n");
+        scanf("%d", &temp);
+        fflush(stdin);
+        if (temp > 0)
+            pos++;
+        else if (temp < 0)
+            neg++;
+        else
+            zero++;
+        printf("If you to enter another number press 1 , else press 0.\n");
+        scanf("%d", &cond);
+    }
+    printf("Number of :- \n Positive number entered : %d \n Negative numbers entered : %d \n Zeros entered : %d", pos, neg, zero);
+    return 0;
+}
+*/
+// Q5) Write a program to find octal equivalent of any integer input.
+// To find octal equivalent : divide integer continuously by 8 till dividend doesn't becomes zero, then write the remainders obtained in reverse direction.
+/*
+#include <stdio.h>
+int main()
+{
+    int input, multiplier = 1, result = 0;
+    printf("Enter any integer.\n");
+    scanf("%d", &input);
+    while (input)
+    {
+        result += multiplier * (input % 8);
+        input /= 8;
+        multiplier *= 10;
+    }
+    printf("Octal equivalent of your integer is %d\n", result);
+    return 0;
+}*/
+// Q6)Write a program to find range of a set of numbers entered. Range is difference b/w the biggest and smallest number in the list.
+/*
+#include <stdio.h>
+
+int main()
+{
+    int n, num, big, flag = 0, small, range;
+    printf("How many number are there in set?\n");
+    scanf("%d", &n);
+
+    while (n)
+    {
+        printf("Enter number : \n");
+        scanf("%d", &num);
+        if (flag == 0)
+        {
+            big = small = num;
+            flag = 1;
+        }
+        else
+        {
+            if (num > big)
+            {
+                big = num;
+            }
+            else if (num < small)
+            {
+                small = num;
+            }
+        }
+        n--;
+    }
+    range = big - small;
+    printf("Range of entered set is %d", range);
+    return 0;
+}
+*/
