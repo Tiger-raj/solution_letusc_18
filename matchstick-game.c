@@ -10,6 +10,7 @@ Rules of matchstick game are:
 int main(int argc, char const *argv[])
 {
     int total = 21, user, sum = 0;
+    char flush;
     printf("Welcome to matchstick game.\n Rules of this game are: \n - There are 21 matchsticks \n - The computer will ask you to pick 1,2,3 or 4 matchstick(s). \n - After you pick up yours, computer does its picking.\n- Whoever is forced to pick up the last matchstick loses the game.\n Best of luck, press (Enter) to continue.\n");
     getchar();
     while (sum < 21)
@@ -20,6 +21,9 @@ int main(int argc, char const *argv[])
         if (21 - sum == 0)
         {
             printf("YOU LOST :(\n");
+            printf("Click (Enter) to continue.\n");
+            scanf("%c", &flush);
+            getchar();
         }
         else
         {
