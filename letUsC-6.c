@@ -141,3 +141,48 @@ int main()
 	return 0;
 }
 */
+// Q6) Population of a town increased by 10% each year to become 100000 at the end of 10 years. Write a program to print population at the end of each year.
+/*
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	int i = 1, j;
+	float pop;
+	while (i < 11)
+	{
+		pop = 100000 / pow(1.1, i);
+		printf("Population %d years ago : %f\n", i, pop);
+		i++;
+	}
+}
+*/
+
+// Q7)Print all Ramanujun's numbers  to a reasonable limit. Ramanujan's number is a number which can be expressed as sum of two cubes in two different ways. Smallest number is 1729.
+#include <stdio.h>
+
+int main()
+{
+	int i, j, k, l;
+	for (i = 0; i < 30; i++)
+	{
+		for (j = 0; j < 30; j++)
+		{
+			for (k = 0; k < 30; k++)
+			{
+				for (l = 0; l < 30; l++)
+				{
+					if (i != j && i != k && i != l && j != k && j != l && k != l)
+					{
+						if (i * i * i + j * j * j == k * k * k + l * l * l)
+						{
+							printf("%d\n", i * i * i + j * j * j);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return 0;
+}
