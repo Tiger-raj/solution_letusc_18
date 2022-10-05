@@ -158,7 +158,9 @@ int main()
 }
 */
 
-// Q7)Print all Ramanujun's numbers  to a reasonable limit. Ramanujan's number is a number which can be expressed as sum of two cubes in two different ways. Smallest number is 1729.
+// Q7)Print all numbers which can be expressed as sum of two cubes in two different ways. Smallest number is 1729(also known as Ramanujan's number), i.e. 1729 = pow(1,3)+pow(12,3) = pow(9,3)+pow(10,3)
+/*
+
 #include <stdio.h>
 
 int main()
@@ -177,6 +179,7 @@ int main()
 						if (i * i * i + j * j * j == k * k * k + l * l * l)
 						{
 							printf("%d\n", i * i * i + j * j * j);
+							// printf("%d,%d,%d,%d\n", i, j, k, l);
 						}
 					}
 				}
@@ -186,3 +189,56 @@ int main()
 
 	return 0;
 }
+*/
+
+// Q8)Write a program to print 24 hours of the day with proper suffix like AM, PM, noon, midnight.
+/*
+#include <stdio.h>
+
+int main()
+{
+	int i = 0;
+	while (i <= 24)
+	{
+		if (i < 12 && i >= 1)
+		{
+			printf("%d AM\n", i);
+		}
+		else if (i == 12)
+		{
+			printf("%d noon\n", i);
+		}
+		else if (i > 12 && i < 24)
+		{
+			printf("%d PM\n", i % 12);
+		}
+		else if (i == 0)
+		{
+			printf("12 midnight\n");
+		}
+		i++;
+	}
+	return 0;
+}
+*/
+// Q9)Print the pattern given in book
+/*
+#include <stdio.h>
+
+int main()
+{
+	int i, k, j, l, sp;
+	sp = 20;
+	for (i = 1, j = 1; i < 5; i++)
+	{
+		for (k = 1; k < sp; k++)
+			printf(" ");
+		sp -= 2;
+		for (l = 1; l <= i; l++, j++)
+		{
+			printf("%d   ", j);
+		}
+		printf("\n");
+	}
+	return 0;
+}*/
