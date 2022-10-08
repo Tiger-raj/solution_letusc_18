@@ -63,3 +63,53 @@ int main()
     return 0;
 }
 */
+// Write a program to find out grace marks obtained by the student according to the conditions given in book using switch statements.
+/*
+#include <stdio.h>
+
+int main()
+{
+    int class, nsf;
+    printf("Enter the class obtained by you in integer format like first class as 1 and so on.\n");
+    scanf("%d", &class);
+    printf("Enter the no. of subjects you failed.\n");
+    scanf("%d", &nsf);
+    switch (class)
+    {
+    case 1:
+        if (nsf < 4)
+        {
+            printf("You got %d grace marks.\n", 5 * nsf);
+        }
+        else
+        {
+            printf("No grace awarded!\n");
+        }
+        break;
+    case 2:
+        if (nsf < 3)
+        {
+            printf("You got %d grace marks.\n", 4 * nsf);
+        }
+        else
+        {
+            printf("No grace awarded!\n");
+        }
+        break;
+    case 3:
+        if (nsf < 2)
+        {
+            printf("You got 5 grace marks.\n");
+        }
+        else
+        {
+            printf("No grace awarded!\n");
+        }
+        break;
+    default:
+        printf("Wrong class inputed !!");
+        break;
+    }
+    return 0;
+}
+*/
