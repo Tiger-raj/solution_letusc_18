@@ -204,3 +204,34 @@ int convRoman(int x, int y, char z)
     return (x % y);
 }
 */
+
+// A positive integer is entered through the keyboard. Write a function to obtain the prime factors of this number. For example, prime factors of 24 are 2,2,2,3 and that of 35 are 5 and 7.
+
+#include <stdio.h>
+
+int main()
+{
+    int num = 1256, i;
+    for (i = 2; i <= num; i++)
+    {
+        int j = 2;
+        while (j <= i - 1)
+        {
+            if (i % j == 0)
+            {
+                break;
+            }
+            j++;
+        }
+        if (i == j)
+        {
+            // write division and priniting code here as PRIME.
+            while (num % i == 0)
+            {
+                printf("%d ", i);
+                num /= i;
+            }
+        }
+    }
+    return 0;
+}
